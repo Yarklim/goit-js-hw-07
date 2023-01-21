@@ -15,6 +15,8 @@ function openModalImg(e) {
     `);
 
   instanceImg.show();
+
+  // Закрытие модалки по Escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       instanceImg.close();
