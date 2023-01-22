@@ -8,8 +8,6 @@ const galleryListEl = document.querySelector('.gallery');
 galleryListEl.addEventListener('click', openModalImg);
 
 function openModalImg(e) {
-  e.preventDefault();
-
   // Закрытие модалки по Escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
