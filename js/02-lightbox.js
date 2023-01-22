@@ -7,14 +7,14 @@ const galleryListEl = document.querySelector('.gallery');
 // Прослушивание и делегирование события / открытие модального окна
 galleryListEl.addEventListener('click', openModalImg);
 
-function openModalImg(e) {
-  // Закрытие модалки по Escape
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      instanceImg.close();
-    }
-  });
-}
+function openModalImg() {}
+
+// Закрытие модалки по Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    instanceImg.close();
+  }
+});
 
 // Создаю разметку галлереи в HTML
 const imgMarcup = createItemImg(galleryItems);
