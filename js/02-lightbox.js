@@ -4,18 +4,6 @@ import { galleryItems } from './gallery-items.js';
 
 const galleryListEl = document.querySelector('.gallery');
 
-// Прослушивание и делегирование события / открытие модального окна
-galleryListEl.addEventListener('click', openModalImg);
-
-function openModalImg() {}
-
-// Закрытие модалки по Escape
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    instanceImg.close();
-  }
-});
-
 // Создаю разметку галлереи в HTML
 const imgMarcup = createItemImg(galleryItems);
 galleryListEl.insertAdjacentHTML('beforeend', imgMarcup);
@@ -24,7 +12,7 @@ galleryListEl.insertAdjacentHTML('beforeend', imgMarcup);
 function createItemImg(items) {
   const imgItem = items
     .map(({ preview, original, description }) => {
-      return `<a class="gallery__шеуь" href="${original}" onclick=“return false”>
+      return `<a class="gallery__item" href="${original}" onclick=“return false”>
     <img
       class="gallery__image"
       src='${preview}'
