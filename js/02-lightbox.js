@@ -9,9 +9,6 @@ galleryListEl.addEventListener('click', openModalImg);
 
 function openModalImg(e) {
   e.preventDefault();
-  if (e.target.nodeName !== 'IMG') {
-    return;
-  }
 
   // Закрытие модалки по Escape
   document.addEventListener('keydown', (e) => {
