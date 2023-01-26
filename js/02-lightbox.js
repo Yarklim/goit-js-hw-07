@@ -12,7 +12,7 @@ galleryListEl.insertAdjacentHTML('beforeend', imgMarcup);
 function createItemImg(items) {
   const imgItem = items
     .map(({ preview, original, description }) => {
-      return `<a class="gallery__item" href="${original}" onclick=“return false”>
+      return `<a class="gallery__item" href="${original}">
     <img
       class="gallery__image"
       src='${preview}'

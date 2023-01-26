@@ -17,11 +17,16 @@ function openModalImg(e) {
   instanceImg.show();
 
   // Закрытие модалки по Escape
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
+  if (instanceImg.visible()) {
+    document.addEventListener('keydown', onKeyboardClick);
+  }
+
+  function onKeyboardClick(e) {
+    if (e.code === 'Escape') {
       instanceImg.close();
+      document.removeEventListener('keydown', onKeyboardClick);
     }
-  });
+  }
 }
 
 // Создаю разметку галлереи в HTML
@@ -33,7 +38,7 @@ function createItemImg(items) {
   const imgItem = items
     .map(({ preview, original, description }) => {
       return `<div class="gallery__item">
-  <a class="gallery__link" href="${original}" onclick=“return false”>
+  <a class="gallery__link" href="${original}">
     <img
       class="gallery__image"
       src='${preview}'
